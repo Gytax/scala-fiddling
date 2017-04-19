@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+GET     /                           controllers.HomeController.index
+GET     /persons                    controllers.PersonController.index
+POST    /persons/add                controllers.PersonController.add
+POST    /persons/delete/:id         controllers.PersonController.delete(id: Int)
+# POST    /persons/update/:id         controllers.PersonController.update(id: Int)
+
+# Wut, suddenly POST is unauthorized
+GET     /persons/add                controllers.PersonController.add
+GET     /persons/delete/:id         controllers.PersonController.delete(id: Int)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
